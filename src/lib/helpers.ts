@@ -8,3 +8,10 @@ export async function fetchFromDB<T> (endpoint: string, params: Record<string, s
     if (!res.ok) throw new Error("Failed to fetch from DB");
     return res.json();
 };
+
+export async function fetchMovieById<T> (endpoint: string, params: Record<string, string> = {}): Promise<T> {
+    const query = new URLSearchParams({ api_key: API_KEY ?? "", language: "en-US",  ...params });
+    const res = await fetch(`${BASE_URL}${endpoint}?${query}`);
+    if (!res.ok) throw new Error("Failed to fetch movie");
+    return res.json();
+};

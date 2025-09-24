@@ -1,5 +1,5 @@
-import {fetchFromDB} from "@/lib/helpers";
-import {Movie} from "@/types/movie";
+import { fetchFromDB } from "@/lib/helpers";
+import { Movie } from "@/types/movie";
 import MovieCard from "@/components/MovieCard";
 
 export const dynamic = "force-dynamic";
